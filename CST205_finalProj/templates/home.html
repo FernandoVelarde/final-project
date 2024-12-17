@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+
+          <!--COLUMN 1 (EMPTY)-->
+          <div class="col-sm">
+          </div>
+
+          <!--COLUMN 2 (CENTER CONTENT)-->
+          <div class="col-sm">
+            <div class="card" style="width: 32rem;">
+                
+                <!--WELCOME IMAGE-->
+                <img src="static/images/3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <!--SEARCH BAR-->
+                    <div class="text-center">
+                      <form id="form">
+                        <input type="search" id="query" name="q" placeholder="Enter Search">
+                        <!--<button>Search</button>-->
+                      </form>
+                    </div>
+
+                    <br>
+                    
+                    <!--DROPDOWN MENU-->
+                    <div class="dropdown">
+                      <div class="text-center">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Select Search Type
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Search by Ingredients</a></li>
+                          <li><a class="dropdown-item" href="#">Search by Recipe Name</a></li>
+                        </ul>
+                        </div>
+                      </div>
+
+                      <hr>
+                      
+                      <!--SEARCH BUTTON-->
+                      <div class="text-center">
+                        <button type="button" class="btn btn-success">Let's go!</button>
+                      </div>
+        
+                    </div>
+              </div>
+          </div>
+          <!--COLUMN 3 (EMPTY)-->
+          <div class="col-sm">
+          </div>
+        </div>
+      </div>
+
+    {{ bootstrap.load_js() }}
+</body>
+</html>

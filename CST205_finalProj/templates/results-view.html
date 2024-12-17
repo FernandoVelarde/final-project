@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+
+    <!--RESULTS | CARD GRID-->
+    <div class="container">
+        <div class="row">
+            {% for result in results %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <img src="recipe-thumbnail" class="card-img-top" alt="...">{{ result.thumbnail }}</img>
+                        <h5 class="card-title">{{ result.title }}</h5>
+                        <p class="card-text">{{ result.ingredients }}</p>
+                        <a href="{{ result.link }}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {{ bootstrap.load_js() }}
+</body>
+</html>
+<!--
+<div class="container">
+    ROW 1
+    <div class="row">
+
+      COLUMN 1
+      <div class="col-sm">
+      </div>
+
+      COLUMN 2
+      <div class="col-sm">
+      </div>
+
+      COLUMN 3
+      <div class="col-sm">
+      </div>
+    </div>
+</div>
+-->
