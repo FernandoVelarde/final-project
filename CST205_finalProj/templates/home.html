@@ -25,16 +25,23 @@
 
                     <!--SEARCH BAR-->
                     <div class="text-center">
-                      <form id="form">
-                        <input type="search" id="query" name="q" placeholder="Enter Search">
-                        <!--<button>Search</button>-->
+                      <form action="/searchIngredient" method="POST">
+                        <input type="text" name="query" placeholder="Enter Search">
+                        <hr>
+                     <!--SEARCH BUTTON-->
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-success">Search Ingredients</button>
+                      </div>
                       </form>
+                      <!-- <form action="/searchRecipe" method="POST">
+                        <button type="submit" class="btn btn-success">Search Recipes</button>
+                      </form> -->
                     </div>
 
                     <br>
                     
                     <!--DROPDOWN MENU-->
-                    <div class="dropdown">
+                    <!-- <div class="dropdown">
                       <div class="text-center">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Select Search Type
@@ -44,15 +51,10 @@
                           <li><a class="dropdown-item" href="#">Search by Recipe Name</a></li>
                         </ul>
                         </div>
-                      </div>
+                      </div> -->
 
                       <hr>
-                      
-                      <!--SEARCH BUTTON-->
-                      <div class="text-center">
-                        <button type="button" class="btn btn-success">Let's go!</button>
-                      </div>
-        
+                    
                     </div>
               </div>
           </div>

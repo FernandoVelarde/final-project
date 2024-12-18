@@ -15,10 +15,12 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <img src="recipe-thumbnail" class="card-img-top" alt="...">{{ result.thumbnail }}</img>
-                        <h5 class="card-title">{{ result.title }}</h5>
-                        <p class="card-text">{{ result.ingredients }}</p>
-                        <a href="{{ result.link }}" class="btn btn-primary">Read More</a>
+                        <img src="{{ result.image }}" class="card-img-top" width="200" height="200"></img>
+                        <!--<img src="recipe-thumbnail" class="card-img-top" alt="...">{{ result.thumbnail }}</img>-->
+                        <h5 class="card-title">{{ result.meal_name }}</h5>
+                        <!--<p class="card-text">{{ result.ingredients }}</p>-->
+                        <a href="{{ url_for('detail', recipe_id=result['id']|string) }}" class="btn btn-primary">Read More</a>
+                        <!--<a href="{{ result.link }}" class="btn btn-primary">Read More</a>-->
                     </div>
                 </div>
             </div>
