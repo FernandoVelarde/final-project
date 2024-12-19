@@ -6,6 +6,7 @@
 
 ##### ##### IMPORTS ##### #####
 from functions import search_ingredient, ingredient_api, param
+from api import params
 from flask import Flask, render_template, flash, redirect, url_for, session, request
 from flask_bootstrap import Bootstrap5
 from flask_wtf import FlaskForm
@@ -19,6 +20,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'csumb-otter'
 bootstrap = Bootstrap5(app)
 
+
 ########## SEARCH FORM (HOME PAGE) ##########
 class SearchBar(FlaskForm):
     user_search = StringField(
@@ -27,24 +29,11 @@ class SearchBar(FlaskForm):
     )
 
 
-########## RESULTS DICTIONARY ##########
-"""
-TO DO:
-  > replace sample results with actual search results
-search_results = [
-    {'image': '/imagepath.png', 'title': 'RECIPE TITLE 1', 'ingredients': 'ingredients separated by commas', 'link': 'https://example.com/1'},
-    {'image': '/imagepath.png', 'title': 'RECIPE TITLE 2', 'ingredients': 'ingredients separated by commas', 'link': 'https://example.com/2'},
-    # ... more results
-]
-"""
+########## RESULTS ##########
 ingredients = []
 recipes = []
 url = "https://api.spoonacular.com/recipes/findByIngredients"
 
-"""
-def store_ingredient(my_ingredient):
-   ingredients.append(dict(ingredient = my_ingredient))
-"""
 
 ########## HOME PAGE ##########
 @app.route('/', methods=['GET', 'POST'])
@@ -79,23 +68,6 @@ def searchIngredient():
 
    return render_template('results-view.html', results=results)
 
-# @app.route('/searchRecipe', methods=["POST"])
-# def searchRecipe():
-#    query = request.form['query']
-
-#    print("RECIPE!!")
-#    if not query:
-#         flash("No ingredients provided.\nPlease go back and enter ingredients.")
-#         return redirect(url_for('home'))
-   
-#    ingredients.append(query)
-
-#    parameters = param(ingredients)
-#    full_recipes = ingredient_api(url, parameters)
-#    results = search_ingredient(full_recipes)
-
-
-#    return render_template('results-view.html', results=results)
 
 @app.route('/detail/<recipe_id>')
 def detail(recipe_id):
